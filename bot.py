@@ -21,7 +21,7 @@ async def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 async def echo_message(message):
     translator = Translator()
-    result = translator.translate(message.text, dest = 'en')
+    result = await translator.translate(message.text, dest = 'en')
     await bot.reply_to(message, f'{message.text}\n\n{result.text}')
 
 if __name__ == '__main__':
